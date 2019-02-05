@@ -1,0 +1,40 @@
+<html>
+  <head>
+
+    <title>Accueil</title>   
+
+  </head>
+
+  <body>
+  
+  </br></br>
+  <center>
+  <h1>BIENVENUE <%= @first_name %>! Ici c’est le site où ça balance sévère !</h1></br>
+  <p>Si tu veux assouvir ta curiosité malsaine voilà la petite liste des gossips</p></br>
+  <div class="container">
+  <div class="row">
+    <% @gossips.each do |gossip| %>
+    <div class="col-md-4">  
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title"><%= gossip.user.first_name %></h5>
+    <p class="card-text"><%= gossip.title %></p>
+    <a href='/gossip/<%= gossip.id%>' class='btn btn-info'>En savoir plus</a>
+    </div>
+    </div>
+    </div>
+    <% end %></center>
+    </div>
+  </div>  
+  <center>
+  <div>
+  </br></br>
+  <div class="container">
+  <h3>Pour créer un nouveau gossip c'est par là ↓↓↓</h3></br>
+  <a href='/gossips/new' class='btn btn-info'>Je Balance</a></br></br>
+  </div>
+  </div></center>
+
+  </body>
+
+</html>

@@ -1,5 +1,5 @@
 require 'rails_helper'
-=begin
+
 # Specs in this file have access to a helper object that includes
 # the GossipsHelper. For example:
 #
@@ -13,4 +13,3 @@ require 'rails_helper'
 RSpec.describe GossipsHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
 end
-=end

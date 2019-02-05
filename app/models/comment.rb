@@ -1,7 +1,8 @@
 class Comment < ApplicationRecord
-	belongs_to :user#, optional: true
-	belongs_to :gossip#, optional: true
-	belongs_to :commentable, polymorphic: true, optional: true
-	has_many :comments, as: :commentable
-	has_many :likes, as: :likeable
+  belongs_to :user
+  belongs_to :gossip
+  has_many :likes
+  validates :content, presence: true
+  validates :user_id, presence: true
+  validates :gossip_id, presence: true      
 end

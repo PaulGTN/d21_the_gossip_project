@@ -1,0 +1,25 @@
+<html>
+  <head>
+
+    <title>Tous les gossips</title>   
+
+  </head>
+
+  <body>
+
+  </br></br>
+    <center><h1>Le gossip en détail</h1>
+    <h5>Auteur :</h5>
+    <p><%= @author.first_name %></p>
+    <h5>Titre :</h5>
+    <p><%= @gossip.title %></p>
+    <h5>Contenu :</h5>
+    <p><%= @gossip.content %></p>
+    <h5>Créé le :</h5>
+    <p><%= @gossip.created_at %></p>
+    <a href='/gossip/<%= @gossip.id %>/profil/<%= @user.id%>' class='btn btn-info'>En savoir encore plus</a>
+    </center>
+
+  </body>
+
+</html>

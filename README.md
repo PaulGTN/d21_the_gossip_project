@@ -1,41 +1,47 @@
-Hello la correction, bienvenue dans ce petit repo, el famoso :
+# README
+  ## THE GOSSIP PROJECT (encore...) 
 
-**GOSSIP PROJECT EN RAILS** ;
+  <h2>Contenu</h2>
 
-Le principe de l'exercice est *simple* : 
+  ### 1- Un beau router 
 
-### On potine. *Basique*.
+  ### 2- Un beau controller qui dit qui fait quoi
 
-On commence tout ça avec les premières pages de l'appli.
+  ### 3- Des belles views pour que tout ça est une belle tête
 
-On retrouve les différents __potins__ sur la *page d'accueil*. (pour l'instant fake, lol)
+## Etapes d'utilisation :
 
-__/team__ et __/contact__ dans le *header*.
 
-Tout les liens sont cliquable depuis la *home page*.
 
-Pour faire fonctionner tout ça rien de bien compliqué : 
-~~~~~~~~~~~~~~~~~~~~
-$ bundle install
+Pour lancer le programme une fois gitcloné :
 
-$ rails db:create
+```
 
-$ rails db:migrate
+   $> bundle install
 
-$ rails db:seed
+```
+Ensuite : 
 
-$ rails server
+```
 
-localhost:3000/ 
-~~~~~~~~~~~~~~~~~~~~
+   $> rails db:migrate
 
-#### Made with ♥ by:
+```
+Après : 
 
-##### Quentin Vandecandelaere -> @Quentin Vandecandelaere
+```
 
-##### Martin François -> @tinmar
+   $> rails db:seed
 
-##### Xavier Refour -> @Xavier.Refour
+```
+Après : 
 
-![](https://media.giphy.com/media/jbbXfBJDKl5W8lexTu/giphy.gif)
+```
 
+   $> rails server
+
+```
+
+Et c'est parti ! Si tu veux un petit accueil personnalisé tape ton prénom ou ce que tu veux après localhost:3000 en oubliant pas le slash entre les deux !
+
+Ps : il est actuellement 1h15 et je vais me pencher sur les tests donc chers correcteurs ne vous attendez pas à ce que je sois là à 9h pétantes pour vos coups de fil !

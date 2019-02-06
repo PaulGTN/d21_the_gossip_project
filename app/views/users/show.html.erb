@@ -19,7 +19,9 @@
     <p><%= @user.age %></p>
     <h5>Doukékivient :</h5>
     <p><%= @user.city.name %></p>
+    <%= link_to "Je veux le/la trouver", city_path(@user.city.id), :class => 'btn btn-info'%> 
+    
     </center>
 
-    <a href='<%= cities_path(@user.city.name) %>' class='btn btn-info'>Je veux le trouver !</a>
+    
   </body>

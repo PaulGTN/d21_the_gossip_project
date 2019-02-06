@@ -12,6 +12,12 @@
   <div class="alert alert-success" role="alert"><% flash[:succes] %><p>Ton gossip a bien été enregistré</p></div>
   <% end %>
   </div>
+
+  <div class = 'container col-md-8'>
+  <% if flash[:success] %>
+  <div class="alert alert-success" role="alert"><% flash[:succes] %><p>Plus personne ne verra cette horreur !</p></div>
+  <% end %>
+  </div>
   </center>
   </br></br>
   <center>
@@ -31,7 +37,8 @@
     <div class="card-body">
     <h5 class="card-title"><%= gossip.user.first_name %></h5>
     <p class="card-text"><%= gossip.title %></p>
-    <a href='/gossip/<%= gossip.id%>' class='btn btn-info'>En savoir plus</a>
+    <%= link_to "En savoir plus", gossip_path(gossip.id), :class => 'btn btn-info' %>
+    
     </div>
     </div>
     </div>

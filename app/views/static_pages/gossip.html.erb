@@ -8,15 +8,17 @@
   <body>
 
   </br></br>
-    <center><h1>Le gossip en détail</h1>
-    <h5>Auteur :</h5>
-    <p><%= @author.first_name %></p>
+    <center><h1>Le gossip n° <%= @gossip.id %> en détail</h1></br>
     <h5>Titre :</h5>
-    <p><%= @gossip.title %></p>
+    <p><%= @gossip.title %></p></br>
     <h5>Contenu :</h5>
-    <p><%= @gossip.content %></p>
+    <p><%= @gossip.content %></p></br>
+    <h5>Auteur :</h5>
+    <p><%= @author.first_name %></p></br>
+    <h5>Sa ville :</h5>
+    <p><%= @author.city.name %></p></br>
     <h5>Créé le :</h5>
-    <p><%= @gossip.created_at %></p>
+    <p><%= @gossip.created_at %></p></br>
     <a href='/gossip/<%= @gossip.id %>/profil/<%= @user.id%>' class='btn btn-info'>En savoir encore plus</a>
     </center>
 

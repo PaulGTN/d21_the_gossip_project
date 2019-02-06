@@ -1,0 +1,66 @@
+<html>
+  <head>
+
+    <title>Tous les gossips</title>   
+
+  </head>
+
+  <body>
+  <div class = 'container col-md-8'>
+  <% if flash[:success] %>
+  <div class="alert alert-success" role="alert"><% flash[:succes] %><p>Woosh, le bla-bla a disparu !</p></div>
+  <% end %>
+  </div>
+
+  </br></br>
+    <center><h1>Le gossip n° <%= @gossip.id %> en détail</h1></br>
+    <h5>Titre :</h5>
+    <p><%= @gossip.title %></p></br>
+    <h5>Contenu :</h5>
+    <p><%= @gossip.content %></p></br>
+    <h5>Auteur :</h5>
+    <p><%= @gossip.user.first_name + " " + @gossip.user.last_name %></p></br>
+    <h5>Sa ville :</h5>
+    <p><%= @gossip.user.city.name %></p></br>
+    <h5>Créé le :</h5>
+    <p><%= @gossip.created_at %></p></br>
+    <%= link_to "En savoir encore plus", user_path(@user.id), :class => 'btn btn-info' %></br></br>
+    <%= link_to "Le/la trouver", city_path(@user.city.id), :class => 'btn btn-info'%></br></br>
+    <%= link_to "Modifier ce gros mytho", edit_gossip_path(@gossip.id), :class => 'btn btn-info'%>
+    <%= link_to "Supprimer cette horreur", gossip_path(params[:id]), type: 'submit', class: 'btn btn-warning', method: 'delete', data: { confirm: "Tu veux vraiment que ce gossip disparaisse ?" } %> 
+    <h3>Ajoute ton grain de sel</h3>
+    <%= form_tag(gossip_comments_path(params[:id]), method: :create) do %>
+      <%= label_tag 'Dis nous tout' %>
+      <%= text_field_tag 'content', @comment.content, class:'form-control', placeholder: "Ton commentaire" %>
+      </br></br>
+      <%= submit_tag "Ajouter mon grain de sel", class: 'btn btn-info' %>
+  <% end %>
+  <div class="row"><div class = 'container col-md-8'><div class = 'container col-md-8'>
+  <% if flash[:success] %>
+  <div class="alert alert-success" role="alert"><% flash[:succes] %><p>Ton gossip a bien été enregistré</p></div>
+  <% end %>
+  </div>
+  <% if flash[:success] %>
+  <div class="alert alert-success" role="alert"><% flash[:succes] %><p>Ton gossip a bien été enregistré</p></div>
+  <% end %>
+  </div>
+  <% @comments.each do |comment| %>
+  <div class="col-md-4">  
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <h5 class="card-title"><%= comment.content %></h5>
+  <p class="card-text"><%= comment.user.first_name %> <%= comment.user.last_name %></p>
+  <%= link_to "Modifier", edit_gossip_comment_path(@gossip.id, comment.id) %>
+  
+  
+  </div>
+  </div>
+  </div>
+  <% end %></center>
+  </div>
+    </center>
+
+
+  </body>
+
+</html>

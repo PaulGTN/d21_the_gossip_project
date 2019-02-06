@@ -13,11 +13,11 @@ class StaticPagesController < ApplicationController
   end
 
   #On définit la méthode accueil et les variables dont elle à besoin
-  def accueil
-    @first_name = params['first_name']
+  def index
+    #@first_name = params['first_name']
     @gossips = Gossip.all
   end
-
+=begin
   #Idem
   def gossip
     @gossip = Gossip.find_by(id: params[:gossip_id])
@@ -30,5 +30,6 @@ class StaticPagesController < ApplicationController
   def profil
     @user = User.find_by(id: params[:user_id])  
   end 
+=end 
   
 end

@@ -1,0 +1,9 @@
+<%= form_tag url_for(action:'update'), method: 'patch' do %>
+  <%= label_tag "Il n'y a que les idiots qui ne changent pas d'avis, change moi ça" %>
+  <%= text_field_tag :content, @comment.content, class:'form-control', placeholder: @comment.content %>
+  </br></br>
+  <%= submit_tag "Je ne suis pas un idiot !", class: 'btn btn-info' %>
+  <% end %>
+  <%= link_to "Supprimer ce bla-bla", gossip_comment_path(@comment.gossip.id, @comment.id), :class => 'btn btn-warning', method: :delete, data: { confirm: "Tu veux vraiment supprimer ce commentaire ?" } %>
+  
+

@@ -29,12 +29,8 @@
     <%= link_to "Modifier ce gros mytho", edit_gossip_path(@gossip.id), :class => 'btn btn-info'%>
     <%= link_to "Supprimer cette horreur", gossip_path(params[:id]), type: 'submit', class: 'btn btn-warning', method: 'delete', data: { confirm: "Tu veux vraiment que ce gossip disparaisse ?" } %> 
     <h3>Ajoute ton grain de sel</h3>
-    <%= form_tag(gossip_comments_path(params[:id]), method: :create) do %>
-      <%= label_tag 'Dis nous tout' %>
-      <%= text_field_tag 'content', @comment.content, class:'form-control', placeholder: "Ton commentaire" %>
-      </br></br>
-      <%= submit_tag "Ajouter mon grain de sel", class: 'btn btn-info' %>
-  <% end %>
+    <%= link_to "Dis nous tout", new_gossip_comment_path(@gossip.id), :class => 'btn btn-info' %>
+    
   <div class="row"><div class = 'container col-md-8'><div class = 'container col-md-8'>
   <% if flash[:success] %>
   <div class="alert alert-success" role="alert"><% flash[:succes] %><p>Ton gossip a bien été enregistré</p></div>

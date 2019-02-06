@@ -15,9 +15,10 @@ class GossipsController < ApplicationController
   end
 
   def create
-    @gossip = Gossip.new('title' => params[:title],'content' => params[:content], 'user' => User.find(11))
+    @gossip = Gossip.new('title' => params[:title],'content' => params[:content], 'user' => User.find(10))
     if @gossip.save
-      redirect_to root_path flash[:success] = "Ton Gossip a bien été enregistré"
+      flash[:success] = "Ton Gossip a bien été enregistré"
+      redirect_to root_path 
     else
       render 'new'
     end 

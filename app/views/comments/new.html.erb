@@ -1,0 +1,7 @@
+<h1>Ajoute ton grain de sel</h1>
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+  <%= label_tag 'Dis nous tout' %>
+  <%= text_field_tag 'content', @comment.content %>
+  </br></br>
+  <%= submit_tag "Ajouter mon grain de sel", class: 'btn btn-info' %>
+<% end %>

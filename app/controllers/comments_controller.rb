@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
   end 
   
   def new
-    @gossip = Gossip.find(params[:id])
-    @comment = @gossip.comment.new
+    @gossip = Gossip.find(params[:gossip_id])
+    @comment = Comment.new
   end
 
   def create
@@ -36,6 +36,6 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-      redirect_to root_path
+      redirect_to gossip_path(params[:gossip_id])
   end 
 end

@@ -37,6 +37,10 @@
     <div class="card-body">
     <h5 class="card-title"><%= gossip.user.first_name %></h5>
     <p class="card-text"><%= gossip.title %></p>
+    <h5><span class="badge badge-danger">
+      <%= Comment.where(gossip: gossip.id).count %> <span style="font-size: .8em">commentaire(s)</span></span>
+    <span class="badge badge-danger">
+      <%= Like.where(gossip: gossip.id).count %> <span style="font-size: .8em">like(s)</span></span></a></h5>                    
     <%= link_to "En savoir plus", gossip_path(gossip.id), :class => 'btn btn-info' %>
     
     </div>
@@ -44,7 +48,7 @@
     </div>
     <% end %></center>
     </div>
-  </div>  
+  </div>  je boss
   <center>
   <div>
   </br></br>

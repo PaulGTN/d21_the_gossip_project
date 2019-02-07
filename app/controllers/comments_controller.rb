@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user, only: [:create, :edit, :new, :show]
+  before_action :authenticate_user, only: [:create, :edit, :new, :show, :destroy]
 
   def index
   end 
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
     @comment.destroy
       redirect_to gossip_path(params[:gossip_id])
   end 
-  
+
   private
 
   def authenticate_user

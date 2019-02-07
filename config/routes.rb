@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   #get '/gossip/:gossip_id/profil/:user_id', to: 'static_pages#profil', as: 'profil'
   resources :gossips do
     resources :comments
+    resources :likes, only:[:create, :destroy]
   end 
   resources :users
   resources :cities

@@ -17,6 +17,21 @@
     <p><%= @city.zip_code %></p></br>
     </center>
 
+    <% @gossips.each do |gossip| %>        
+      <div class="card" style="margin-bottom: 2vh">
+      <div class="card-body">
+          <h4 class="card-title font-weight-bold playfair-relative"> <%= gossip.title.capitalize %> <span class="badge badge-info badgecustom"><%= Comment.where(gossip: gossip.id).count %></span></h4>
+          <div class="row">
+              <div class="col">
+                  <p class="card-text"> <%= User.find(gossip.user_id).first_name %></p>
+              </div>                
+              <div class="col text-right">
+                  <%= link_to "Retourner au gossip ##{gossip.id}", gossip_path(gossip.id), :class => "btn btn-outline-dark" %>
+              </div>
+          </div>
+      </div>
+  </div><% end %>
+
   </body>
 
 </html>

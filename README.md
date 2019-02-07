@@ -9,7 +9,7 @@ C'était la misère, je déteste heroku, ça a pris un temps fou.
 
 Le pire : ce n'est même pas fini.
 
-Tout marche ou presque, j'abandonne les likes et ce dropdown qui refuse de bouger correctement (je vais quand même pas passer ma soirée sur un bouton).
+Tout marche ou presque, j'abandonne les likes, ce dropdown qui refuse de bouger correctement (je vais quand même pas passer ma soirée sur un bouton) et le css est à moitié fait.
 
 Sinon le reste est ok (normalement).
 

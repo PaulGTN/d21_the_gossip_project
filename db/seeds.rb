@@ -16,7 +16,7 @@ Like.destroy_all
 end 
 
 10.times do 
-  user = User.create!(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.unique.last_name, description: Faker::Movie.quote, email: Faker::Internet.email, age: Faker::Number.number(2), city_id: (rand(City.first.id..City.last.id)), password_digest: "woopii")
+  user = User.create!(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.unique.last_name, description: Faker::Movie.quote, email: Faker::Internet.email, age: Faker::Number.number(2), city_id: (rand(City.first.id..City.last.id)), password: "woopii")
 end
 
 20.times do 

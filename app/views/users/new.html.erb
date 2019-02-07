@@ -28,6 +28,9 @@
   <%= label_tag 'Ton Mot de Passe * (6 caractères minimum)' %></br>
   <%= text_field_tag 'password', @user.password %>
   </br></br>
+  <%= label_tag 'Ta Ville *' %></br>
+  <%= text_field_tag 'city_id', @user.city_id %>
+  </br></br>
   <%= submit_tag "J'arrive !!!", class: 'btn btn-dark' %>
 <% end %></br>
 

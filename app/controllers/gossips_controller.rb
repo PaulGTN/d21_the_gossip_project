@@ -1,5 +1,5 @@
 class GossipsController < ApplicationController
-  before_action :authenticate_user, only: [:create], [:show]
+  before_action :authenticate_user, only: [:edit, :new, :create, :show]
 
   def index
     @gossips = Gossip.all
@@ -16,32 +16,14 @@ class GossipsController < ApplicationController
     @comment = Comment.new
   end
 
-  private
-
-  def authenticate_user
-    unless current_user
-      flash[:danger] = "Connecte toi d'abord"
-      redirect_to new_session_path
-    end
-  end
-
   def create
-    @gossip = Gossip.new('title' => params[:title],'content' => params[:content], 'user' => User.find(10))
+    @gossip = Gossip.new('title' => params[:title],'content' => params[:content], 'user' => current_user)
     if @gossip.save
       flash[:success] = "Ton Gossip a bien été enregistré"
       redirect_to root_path 
     else
       render 'new'
     end 
-  end
-  
-  private
-
-  def authenticate_user
-    unless current_user
-      flash[:danger] = "Connecte toi d'abord"
-      redirect_to new_session_path
-    end
   end
 
   def edit
@@ -52,9 +34,9 @@ class GossipsController < ApplicationController
     @gossip = Gossip.find(params[:gossip_id])
     @gossip_params = params.permit(:title, :content)
     if @gossip.update(gossip_params)  
-      redirect to @gossip
+      redirect to gossip_path(params[:id])
     else
-      render :edit
+      render 'edit'
     end 
   end 
 
@@ -64,6 +46,13 @@ class GossipsController < ApplicationController
     redirect_to root_path flash[:success] = "Plus personne ne verra cette horreur !"
   end 
 
-end
+  private
 
-@current_user 
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Connecte toi d'abord"
+      redirect_to new_session_path
+    end
+  end
+
+end

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new('first_name' => params[:first_name], 'last_name' => params[:last_name], 'description' => params[:description], 'email' => params[:email], 'age' => params[:age], 'password' => params[:password])
+    @user = User.create('first_name' => params[:first_name], 'last_name' => params[:last_name], 'description' => params[:description], 'email' => params[:email], 'age' => params[:age], 'password' => params[:password], 'city_id' => params[:city_id])
     if @user.save
       flash[:success] = "Ton inscription est réussie"
       redirect_to root_path 
@@ -13,6 +13,9 @@ class UsersController < ApplicationController
       flash[:alert] = "C'est pas bon!"
       render 'new'
     end
+
+    puts @user.errors.full_messages
+    puts params.inspect
   end
 
 

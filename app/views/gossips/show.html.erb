@@ -26,8 +26,10 @@
     <p><%= @gossip.created_at %></p></br>
     <%= link_to "En savoir encore plus", user_path(@user.id), :class => 'btn btn-info' %></br></br>
     <%= link_to "Le/la trouver", city_path(@user.city.id), :class => 'btn btn-info'%></br></br>
+    <% if current_user == @gossip.user %>
     <%= link_to "Modifier ce gros mytho", edit_gossip_path(@gossip.id), :class => 'btn btn-info'%>
     <%= link_to "Supprimer cette horreur", gossip_path(params[:id]), type: 'submit', class: 'btn btn-warning', method: 'delete', data: { confirm: "Tu veux vraiment que ce gossip disparaisse ?" } %> 
+    <% end %>
     <h3>Ajoute ton grain de sel</h3>
     <%= link_to "Dis nous tout", new_gossip_comment_path(@gossip.id), :class => 'btn btn-info' %>
     

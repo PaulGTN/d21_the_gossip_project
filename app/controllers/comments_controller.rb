@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user, only: [:create]
-  
+  before_action :authenticate_user, only: [:create, :edit, :new, :show]
+
   def index
   end 
 
@@ -19,15 +19,6 @@ class CommentsController < ApplicationController
     redirect_to gossip_path(params[:gossip_id])
   end
 
-  private
-
-  def authenticate_user
-    unless current_user
-      flash[:danger] = "Connecte toi d'abord"
-      redirect_to new_session_path
-    end
-  end
-
   def edit
     @comment = Comment.find(params[:id])
   end
@@ -42,13 +33,20 @@ class CommentsController < ApplicationController
     end
   end 
 
-  
-
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
       redirect_to gossip_path(params[:gossip_id])
   end 
+  
+  private
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Connecte toi d'abord"
+      redirect_to new_session_path
+    end
+  end
+
 end
 
-@current_user 

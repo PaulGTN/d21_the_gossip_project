@@ -3,45 +3,25 @@
 
   <h2>Contenu</h2>
 
-  ### 1- Un beau router 
+## :fantôme: Bienvenue dans le projet de l'horreur :fantôme:
 
-  ### 2- Un beau controller qui dit qui fait quoi
+C'était la misère, je déteste heroku, ça a pris un temps fou. 
 
-  ### 3- Des belles views pour que tout ça est une belle tête
+Le pire : ce n'est même pas fini.
 
-## Etapes d'utilisation :
+Tout marche ou presque, j'abandonne les likes et ce dropdown qui refuse de bouger correctement (je vais quand même pas passer ma soirée sur un bouton)
 
+Sinon le reste est ok (normalement).
 
+Perso, c'était l'angoisse et le stress ce truc.
+<center>
+<img src="https://media.giphy.com/media/D12CsrRNv7gL6/giphy.gif">
 
-Pour lancer le programme une fois gitcloné :
+J'espère que demain sera une journée de paix donc voici un chat pour se détendre (ça fait toujours du bien les chats).
 
-```
+<img src="https://media.giphy.com/media/iUR4qsCkrNHhe/giphy.gif">
+</center>
 
-   $> bundle install
+Ah et le petit lien heroku évidemment :
 
-```
-Ensuite : 
-
-```
-
-   $> rails db:migrate
-
-```
-Après : 
-
-```
-
-   $> rails db:seed
-
-```
-Après : 
-
-```
-
-   $> rails server
-
-```
-
-Et c'est parti ! Si tu veux un petit accueil personnalisé tape ton prénom ou ce que tu veux après localhost:3000 en oubliant pas le slash entre les deux !
-
-Ps : il est actuellement 1h15 et je vais me pencher sur les tests donc chers correcteurs ne vous attendez pas à ce que je sois là à 9h pétantes pour vos coups de fil !
+https://the-gossip-project-by-paul.herokuapp.com/

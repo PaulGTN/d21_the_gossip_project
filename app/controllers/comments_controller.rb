@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user, only: [:create]
+  
   def index
   end 
 
@@ -15,6 +17,15 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create!('content' => params[:content],'gossip_id' => params[:gossip_id], 'user' => User.find(10))
     redirect_to gossip_path(params[:gossip_id])
+  end
+
+  private
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Connecte toi d'abord"
+      redirect_to new_session_path
+    end
   end
 
   def edit
@@ -39,3 +50,5 @@ class CommentsController < ApplicationController
       redirect_to gossip_path(params[:gossip_id])
   end 
 end
+
+@current_user 

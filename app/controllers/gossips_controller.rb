@@ -1,8 +1,10 @@
 class GossipsController < ApplicationController
+  before_action :authenticate_user, only: [:create], [:show]
+
   def index
     @gossips = Gossip.all
   end
-
+  
   def new
     @gossip = Gossip.new
   end
@@ -14,6 +16,15 @@ class GossipsController < ApplicationController
     @comment = Comment.new
   end
 
+  private
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Connecte toi d'abord"
+      redirect_to new_session_path
+    end
+  end
+
   def create
     @gossip = Gossip.new('title' => params[:title],'content' => params[:content], 'user' => User.find(10))
     if @gossip.save
@@ -22,7 +33,16 @@ class GossipsController < ApplicationController
     else
       render 'new'
     end 
-  end 
+  end
+  
+  private
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Connecte toi d'abord"
+      redirect_to new_session_path
+    end
+  end
 
   def edit
     @gossip = Gossip.find(params[:id])
@@ -45,3 +65,5 @@ class GossipsController < ApplicationController
   end 
 
 end
+
+@current_user 

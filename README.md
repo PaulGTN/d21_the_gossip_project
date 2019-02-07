@@ -2,7 +2,7 @@
   ## THE GOSSIP PROJECT (encore...) 
 
   <h2>Contenu</h2>
-<p align="center">
+
 ## Bienvenue dans le projet de l'horreur 
 
 C'était la misère, je déteste heroku, ça a pris un temps fou. 
@@ -20,7 +20,7 @@ Perso, c'était l'angoisse et le stress ce truc.
 J'espère que demain sera une journée de paix donc voici un chat pour se détendre (ça fait toujours du bien les chats).
 
 <img src="https://media.giphy.com/media/iUR4qsCkrNHhe/giphy.gif">
-</p>
+
 
 Ah et le petit lien heroku évidemment :
 
